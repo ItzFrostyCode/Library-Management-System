@@ -117,6 +117,7 @@ namespace Library_Management_System
                 g.InterpolationMode = InterpolationMode.HighQualityBicubic;
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
                 g.DrawImage(image, new Rectangle(0, 0, width, height));
             }
