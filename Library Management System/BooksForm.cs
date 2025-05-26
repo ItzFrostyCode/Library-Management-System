@@ -22,10 +22,46 @@ namespace Library_Management_System
             InitializeCategoryBooksComboBox();
             StyleAllButtons();
             StyleDataGridViewBooks();
+            SetNextAvailableBookID();
 
             dataGridViewBooks.CellClick += dataGridViewBooks_CellClick;
 
+            textBoxBookID.ReadOnly = true;
+            textBoxBookID.TabStop = false;
+            textBoxBookID.ForeColor = Color.Black;
+        }
+        private void SetNextAvailableBookID()
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    // Get all existing BookIDs in ascending order
+                    string query = "SELECT BookID FROM Books ORDER BY BookID ASC";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    var reader = cmd.ExecuteReader();
 
+                    int expectedId = 1;
+                    while (reader.Read())
+                    {
+                        int currentId = Convert.ToInt32(reader["BookID"]);
+                        if (currentId != expectedId)
+                        {
+                            // Found a gap
+                            break;
+                        }
+                        expectedId++;
+                    }
+                    reader.Close();
+
+                    textBoxBookID.Text = expectedId.ToString();
+                }
+            }
+            catch
+            {
+                textBoxBookID.Text = "1";
+            }
         }
 
         private void dataGridViewBooks_CellClick(object sender, DataGridViewCellEventArgs e)

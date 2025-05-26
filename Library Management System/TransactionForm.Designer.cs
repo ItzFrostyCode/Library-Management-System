@@ -115,6 +115,7 @@
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(1242, 68);
             this.panelMain.TabIndex = 55;
+            this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
             // buttonTransactionForm
             // 

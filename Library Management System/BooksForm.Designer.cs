@@ -76,19 +76,19 @@
             this.textBoxPublisher = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonTransactionForm = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelGroup2 = new System.Windows.Forms.Panel();
-            this.panelGroup1 = new System.Windows.Forms.Panel();
-            this.pictureBoxBooks = new System.Windows.Forms.PictureBox();
-            this.buttonTransactionForm = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.buttonSettings = new System.Windows.Forms.Button();
+            this.panelGroup1 = new System.Windows.Forms.Panel();
             this.buttonReturn = new System.Windows.Forms.Button();
             this.buttonBorrow = new System.Windows.Forms.Button();
             this.buttonBooks = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
+            this.pictureBoxBooks = new System.Windows.Forms.PictureBox();
             this.buttonExportdataGridViewBooks = new System.Windows.Forms.Button();
             this.buttonImportdataGridViewBooks = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
@@ -174,7 +174,6 @@
             this.textBoxBookID.Name = "textBoxBookID";
             this.textBoxBookID.Size = new System.Drawing.Size(450, 21);
             this.textBoxBookID.TabIndex = 0;
-            this.textBoxBookID.Text = "Enter Book ID";
             this.textBoxBookID.TextChanged += new System.EventHandler(this.textBoxBookID_TextChanged);
             this.textBoxBookID.Enter += new System.EventHandler(this.textBoxUserID_Enter);
             this.textBoxBookID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUserID_KeyPress);
@@ -667,6 +666,17 @@
             this.panelMain.TabIndex = 53;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
+            // buttonTransactionForm
+            // 
+            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
+            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
+            this.buttonTransactionForm.Name = "buttonTransactionForm";
+            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
+            this.buttonTransactionForm.TabIndex = 12;
+            this.buttonTransactionForm.UseVisualStyleBackColor = true;
+            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(218)))), ((int)(((byte)(218)))));
@@ -695,39 +705,6 @@
             this.panelGroup2.Size = new System.Drawing.Size(182, 50);
             this.panelGroup2.TabIndex = 10;
             // 
-            // panelGroup1
-            // 
-            this.panelGroup1.Controls.Add(this.buttonReturn);
-            this.panelGroup1.Controls.Add(this.buttonBorrow);
-            this.panelGroup1.Controls.Add(this.buttonBooks);
-            this.panelGroup1.Controls.Add(this.buttonUsers);
-            this.panelGroup1.Controls.Add(this.buttonHome);
-            this.panelGroup1.Location = new System.Drawing.Point(25, 11);
-            this.panelGroup1.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
-            this.panelGroup1.Name = "panelGroup1";
-            this.panelGroup1.Size = new System.Drawing.Size(416, 50);
-            this.panelGroup1.TabIndex = 1;
-            // 
-            // pictureBoxBooks
-            // 
-            this.pictureBoxBooks.Location = new System.Drawing.Point(239, 137);
-            this.pictureBoxBooks.Name = "pictureBoxBooks";
-            this.pictureBoxBooks.Size = new System.Drawing.Size(111, 111);
-            this.pictureBoxBooks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxBooks.TabIndex = 56;
-            this.pictureBoxBooks.TabStop = false;
-            // 
-            // buttonTransactionForm
-            // 
-            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
-            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
-            this.buttonTransactionForm.Name = "buttonTransactionForm";
-            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
-            this.buttonTransactionForm.TabIndex = 12;
-            this.buttonTransactionForm.UseVisualStyleBackColor = true;
-            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
-            // 
             // buttonLogout
             // 
             this.buttonLogout.BackColor = System.Drawing.Color.Transparent;
@@ -754,6 +731,19 @@
             this.buttonSettings.Size = new System.Drawing.Size(67, 50);
             this.buttonSettings.TabIndex = 3;
             this.buttonSettings.UseVisualStyleBackColor = false;
+            // 
+            // panelGroup1
+            // 
+            this.panelGroup1.Controls.Add(this.buttonReturn);
+            this.panelGroup1.Controls.Add(this.buttonBorrow);
+            this.panelGroup1.Controls.Add(this.buttonBooks);
+            this.panelGroup1.Controls.Add(this.buttonUsers);
+            this.panelGroup1.Controls.Add(this.buttonHome);
+            this.panelGroup1.Location = new System.Drawing.Point(25, 11);
+            this.panelGroup1.Margin = new System.Windows.Forms.Padding(25, 3, 3, 3);
+            this.panelGroup1.Name = "panelGroup1";
+            this.panelGroup1.Size = new System.Drawing.Size(416, 50);
+            this.panelGroup1.TabIndex = 1;
             // 
             // buttonReturn
             // 
@@ -824,6 +814,15 @@
             this.buttonHome.TabIndex = 2;
             this.buttonHome.UseVisualStyleBackColor = false;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
+            // pictureBoxBooks
+            // 
+            this.pictureBoxBooks.Location = new System.Drawing.Point(239, 137);
+            this.pictureBoxBooks.Name = "pictureBoxBooks";
+            this.pictureBoxBooks.Size = new System.Drawing.Size(111, 111);
+            this.pictureBoxBooks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxBooks.TabIndex = 56;
+            this.pictureBoxBooks.TabStop = false;
             // 
             // buttonExportdataGridViewBooks
             // 

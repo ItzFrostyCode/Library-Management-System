@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonTransactionForm = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelGroup2 = new System.Windows.Forms.Panel();
+            this.buttonLogout = new System.Windows.Forms.Button();
+            this.buttonSettings = new System.Windows.Forms.Button();
             this.panelGroup1 = new System.Windows.Forms.Panel();
+            this.buttonReturn = new System.Windows.Forms.Button();
+            this.buttonBorrow = new System.Windows.Forms.Button();
+            this.buttonBooks = new System.Windows.Forms.Button();
+            this.buttonUsers = new System.Windows.Forms.Button();
+            this.buttonHome = new System.Windows.Forms.Button();
             this.dataGridViewBorrower = new System.Windows.Forms.DataGridView();
             this.BorrowerBookID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +51,8 @@
             this.textBoxBorrowerID = new System.Windows.Forms.TextBox();
             this.panelUserDetails = new System.Windows.Forms.Panel();
             this.labelQtyBorrow = new System.Windows.Forms.Label();
+            this.buttonDecrementQty = new System.Windows.Forms.Button();
+            this.buttonIncrementQty = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelBookID = new System.Windows.Forms.Panel();
             this.textBoxBookID = new System.Windows.Forms.TextBox();
@@ -54,24 +64,15 @@
             this.labelEmailAddress = new System.Windows.Forms.Label();
             this.labelFullName = new System.Windows.Forms.Label();
             this.labelUserID = new System.Windows.Forms.Label();
+            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.buttonDecrementQty = new System.Windows.Forms.Button();
-            this.buttonIncrementQty = new System.Windows.Forms.Button();
-            this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonTransactionForm = new System.Windows.Forms.Button();
-            this.buttonLogout = new System.Windows.Forms.Button();
-            this.buttonSettings = new System.Windows.Forms.Button();
-            this.buttonReturn = new System.Windows.Forms.Button();
-            this.buttonBorrow = new System.Windows.Forms.Button();
-            this.buttonBooks = new System.Windows.Forms.Button();
-            this.buttonUsers = new System.Windows.Forms.Button();
-            this.buttonHome = new System.Windows.Forms.Button();
+            this.Fines = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelMain.SuspendLayout();
             this.panelGroup2.SuspendLayout();
             this.panelGroup1.SuspendLayout();
@@ -97,6 +98,17 @@
             this.panelMain.Size = new System.Drawing.Size(1242, 68);
             this.panelMain.TabIndex = 55;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint_1);
+            // 
+            // buttonTransactionForm
+            // 
+            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
+            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
+            this.buttonTransactionForm.Name = "buttonTransactionForm";
+            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
+            this.buttonTransactionForm.TabIndex = 11;
+            this.buttonTransactionForm.UseVisualStyleBackColor = true;
+            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
             // 
             // panel3
             // 
@@ -126,6 +138,33 @@
             this.panelGroup2.Size = new System.Drawing.Size(182, 50);
             this.panelGroup2.TabIndex = 10;
             // 
+            // buttonLogout
+            // 
+            this.buttonLogout.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLogout.BackgroundImage = global::Library_Management_System.Properties.Resources.LogoutIconDefault;
+            this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLogout.Location = new System.Drawing.Point(110, 0);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(67, 50);
+            this.buttonLogout.TabIndex = 4;
+            this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
+            // 
+            // buttonSettings
+            // 
+            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
+            this.buttonSettings.BackgroundImage = global::Library_Management_System.Properties.Resources.SettingsIconDefault;
+            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSettings.Location = new System.Drawing.Point(23, 0);
+            this.buttonSettings.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
+            this.buttonSettings.Name = "buttonSettings";
+            this.buttonSettings.Size = new System.Drawing.Size(67, 50);
+            this.buttonSettings.TabIndex = 3;
+            this.buttonSettings.UseVisualStyleBackColor = false;
+            // 
             // panelGroup1
             // 
             this.panelGroup1.Controls.Add(this.buttonReturn);
@@ -139,6 +178,75 @@
             this.panelGroup1.Size = new System.Drawing.Size(416, 50);
             this.panelGroup1.TabIndex = 1;
             // 
+            // buttonReturn
+            // 
+            this.buttonReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.buttonReturn.BackgroundImage = global::Library_Management_System.Properties.Resources.ButtonReturnActive;
+            this.buttonReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReturn.Location = new System.Drawing.Point(348, 0);
+            this.buttonReturn.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonReturn.Name = "buttonReturn";
+            this.buttonReturn.Size = new System.Drawing.Size(67, 50);
+            this.buttonReturn.TabIndex = 6;
+            this.buttonReturn.UseVisualStyleBackColor = false;
+            // 
+            // buttonBorrow
+            // 
+            this.buttonBorrow.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBorrow.BackgroundImage = global::Library_Management_System.Properties.Resources.ButtonBorrowDefault;
+            this.buttonBorrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBorrow.Location = new System.Drawing.Point(261, 0);
+            this.buttonBorrow.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonBorrow.Name = "buttonBorrow";
+            this.buttonBorrow.Size = new System.Drawing.Size(67, 50);
+            this.buttonBorrow.TabIndex = 5;
+            this.buttonBorrow.UseVisualStyleBackColor = false;
+            this.buttonBorrow.Click += new System.EventHandler(this.buttonBorrow_Click);
+            // 
+            // buttonBooks
+            // 
+            this.buttonBooks.BackColor = System.Drawing.Color.Transparent;
+            this.buttonBooks.BackgroundImage = global::Library_Management_System.Properties.Resources.BooksIconDefault;
+            this.buttonBooks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBooks.Location = new System.Drawing.Point(174, 0);
+            this.buttonBooks.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonBooks.Name = "buttonBooks";
+            this.buttonBooks.Size = new System.Drawing.Size(67, 50);
+            this.buttonBooks.TabIndex = 4;
+            this.buttonBooks.UseVisualStyleBackColor = false;
+            this.buttonBooks.Click += new System.EventHandler(this.buttonBooks_Click);
+            // 
+            // buttonUsers
+            // 
+            this.buttonUsers.BackColor = System.Drawing.Color.Transparent;
+            this.buttonUsers.BackgroundImage = global::Library_Management_System.Properties.Resources.UserIconDefault;
+            this.buttonUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUsers.Location = new System.Drawing.Point(87, 0);
+            this.buttonUsers.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonUsers.Name = "buttonUsers";
+            this.buttonUsers.Size = new System.Drawing.Size(67, 50);
+            this.buttonUsers.TabIndex = 3;
+            this.buttonUsers.UseVisualStyleBackColor = false;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
+            // 
+            // buttonHome
+            // 
+            this.buttonHome.BackColor = System.Drawing.Color.Transparent;
+            this.buttonHome.BackgroundImage = global::Library_Management_System.Properties.Resources.HomeIconDefault;
+            this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonHome.Location = new System.Drawing.Point(0, 0);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.buttonHome.Name = "buttonHome";
+            this.buttonHome.Size = new System.Drawing.Size(67, 50);
+            this.buttonHome.TabIndex = 2;
+            this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
             // dataGridViewBorrower
             // 
             this.dataGridViewBorrower.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -148,7 +256,8 @@
             this.FullName,
             this.DateTimeBorrow,
             this.DueDateTimeReturn,
-            this.Status});
+            this.Status,
+            this.Fines});
             this.dataGridViewBorrower.Location = new System.Drawing.Point(11, 196);
             this.dataGridViewBorrower.Name = "dataGridViewBorrower";
             this.dataGridViewBorrower.Size = new System.Drawing.Size(733, 446);
@@ -235,6 +344,30 @@
             this.labelQtyBorrow.Size = new System.Drawing.Size(32, 37);
             this.labelQtyBorrow.TabIndex = 96;
             this.labelQtyBorrow.Text = "1";
+            // 
+            // buttonDecrementQty
+            // 
+            this.buttonDecrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.decrement;
+            this.buttonDecrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonDecrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDecrementQty.Location = new System.Drawing.Point(261, 390);
+            this.buttonDecrementQty.Name = "buttonDecrementQty";
+            this.buttonDecrementQty.Size = new System.Drawing.Size(29, 30);
+            this.buttonDecrementQty.TabIndex = 95;
+            this.buttonDecrementQty.UseVisualStyleBackColor = true;
+            this.buttonDecrementQty.Click += new System.EventHandler(this.buttonDecrementQty_Click);
+            // 
+            // buttonIncrementQty
+            // 
+            this.buttonIncrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.increment;
+            this.buttonIncrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonIncrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIncrementQty.Location = new System.Drawing.Point(334, 390);
+            this.buttonIncrementQty.Name = "buttonIncrementQty";
+            this.buttonIncrementQty.Size = new System.Drawing.Size(29, 30);
+            this.buttonIncrementQty.TabIndex = 94;
+            this.buttonIncrementQty.UseVisualStyleBackColor = true;
+            this.buttonIncrementQty.Click += new System.EventHandler(this.buttonIncrementQty_Click);
             // 
             // panel7
             // 
@@ -356,6 +489,17 @@
             this.labelUserID.Size = new System.Drawing.Size(0, 21);
             this.labelUserID.TabIndex = 70;
             // 
+            // pictureBoxUser
+            // 
+            this.pictureBoxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBoxUser.Location = new System.Drawing.Point(431, 10);
+            this.pictureBoxUser.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.pictureBoxUser.Name = "pictureBoxUser";
+            this.pictureBoxUser.Size = new System.Drawing.Size(61, 61);
+            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxUser.TabIndex = 69;
+            this.pictureBoxUser.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -406,41 +550,6 @@
             this.label3.TabIndex = 63;
             this.label3.Text = "User Details";
             // 
-            // buttonDecrementQty
-            // 
-            this.buttonDecrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.decrement;
-            this.buttonDecrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonDecrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDecrementQty.Location = new System.Drawing.Point(261, 390);
-            this.buttonDecrementQty.Name = "buttonDecrementQty";
-            this.buttonDecrementQty.Size = new System.Drawing.Size(29, 30);
-            this.buttonDecrementQty.TabIndex = 95;
-            this.buttonDecrementQty.UseVisualStyleBackColor = true;
-            this.buttonDecrementQty.Click += new System.EventHandler(this.buttonDecrementQty_Click);
-            // 
-            // buttonIncrementQty
-            // 
-            this.buttonIncrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.increment;
-            this.buttonIncrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonIncrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIncrementQty.Location = new System.Drawing.Point(334, 390);
-            this.buttonIncrementQty.Name = "buttonIncrementQty";
-            this.buttonIncrementQty.Size = new System.Drawing.Size(29, 30);
-            this.buttonIncrementQty.TabIndex = 94;
-            this.buttonIncrementQty.UseVisualStyleBackColor = true;
-            this.buttonIncrementQty.Click += new System.EventHandler(this.buttonIncrementQty_Click);
-            // 
-            // pictureBoxUser
-            // 
-            this.pictureBoxUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxUser.Location = new System.Drawing.Point(431, 10);
-            this.pictureBoxUser.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.pictureBoxUser.Name = "pictureBoxUser";
-            this.pictureBoxUser.Size = new System.Drawing.Size(61, 61);
-            this.pictureBoxUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBoxUser.TabIndex = 69;
-            this.pictureBoxUser.TabStop = false;
-            // 
             // buttonSearch
             // 
             this.buttonSearch.BackgroundImage = global::Library_Management_System.Properties.Resources.Search__24x24_;
@@ -462,112 +571,11 @@
             this.pictureBox1.TabIndex = 56;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonTransactionForm
+            // Fines
             // 
-            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
-            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
-            this.buttonTransactionForm.Name = "buttonTransactionForm";
-            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
-            this.buttonTransactionForm.TabIndex = 11;
-            this.buttonTransactionForm.UseVisualStyleBackColor = true;
-            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
-            // 
-            // buttonLogout
-            // 
-            this.buttonLogout.BackColor = System.Drawing.Color.Transparent;
-            this.buttonLogout.BackgroundImage = global::Library_Management_System.Properties.Resources.LogoutIconDefault;
-            this.buttonLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogout.Location = new System.Drawing.Point(110, 0);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(67, 50);
-            this.buttonLogout.TabIndex = 4;
-            this.buttonLogout.UseVisualStyleBackColor = false;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
-            // 
-            // buttonSettings
-            // 
-            this.buttonSettings.BackColor = System.Drawing.Color.Transparent;
-            this.buttonSettings.BackgroundImage = global::Library_Management_System.Properties.Resources.SettingsIconDefault;
-            this.buttonSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSettings.Location = new System.Drawing.Point(23, 0);
-            this.buttonSettings.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.buttonSettings.Name = "buttonSettings";
-            this.buttonSettings.Size = new System.Drawing.Size(67, 50);
-            this.buttonSettings.TabIndex = 3;
-            this.buttonSettings.UseVisualStyleBackColor = false;
-            // 
-            // buttonReturn
-            // 
-            this.buttonReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.buttonReturn.BackgroundImage = global::Library_Management_System.Properties.Resources.ButtonReturnActive;
-            this.buttonReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonReturn.Location = new System.Drawing.Point(348, 0);
-            this.buttonReturn.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.buttonReturn.Name = "buttonReturn";
-            this.buttonReturn.Size = new System.Drawing.Size(67, 50);
-            this.buttonReturn.TabIndex = 6;
-            this.buttonReturn.UseVisualStyleBackColor = false;
-            // 
-            // buttonBorrow
-            // 
-            this.buttonBorrow.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBorrow.BackgroundImage = global::Library_Management_System.Properties.Resources.ButtonBorrowDefault;
-            this.buttonBorrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBorrow.Location = new System.Drawing.Point(261, 0);
-            this.buttonBorrow.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.buttonBorrow.Name = "buttonBorrow";
-            this.buttonBorrow.Size = new System.Drawing.Size(67, 50);
-            this.buttonBorrow.TabIndex = 5;
-            this.buttonBorrow.UseVisualStyleBackColor = false;
-            this.buttonBorrow.Click += new System.EventHandler(this.buttonBorrow_Click);
-            // 
-            // buttonBooks
-            // 
-            this.buttonBooks.BackColor = System.Drawing.Color.Transparent;
-            this.buttonBooks.BackgroundImage = global::Library_Management_System.Properties.Resources.BooksIconDefault;
-            this.buttonBooks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonBooks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBooks.Location = new System.Drawing.Point(174, 0);
-            this.buttonBooks.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.buttonBooks.Name = "buttonBooks";
-            this.buttonBooks.Size = new System.Drawing.Size(67, 50);
-            this.buttonBooks.TabIndex = 4;
-            this.buttonBooks.UseVisualStyleBackColor = false;
-            this.buttonBooks.Click += new System.EventHandler(this.buttonBooks_Click);
-            // 
-            // buttonUsers
-            // 
-            this.buttonUsers.BackColor = System.Drawing.Color.Transparent;
-            this.buttonUsers.BackgroundImage = global::Library_Management_System.Properties.Resources.UserIconDefault;
-            this.buttonUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsers.Location = new System.Drawing.Point(87, 0);
-            this.buttonUsers.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.buttonUsers.Name = "buttonUsers";
-            this.buttonUsers.Size = new System.Drawing.Size(67, 50);
-            this.buttonUsers.TabIndex = 3;
-            this.buttonUsers.UseVisualStyleBackColor = false;
-            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
-            // 
-            // buttonHome
-            // 
-            this.buttonHome.BackColor = System.Drawing.Color.Transparent;
-            this.buttonHome.BackgroundImage = global::Library_Management_System.Properties.Resources.HomeIconDefault;
-            this.buttonHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHome.Location = new System.Drawing.Point(0, 0);
-            this.buttonHome.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(67, 50);
-            this.buttonHome.TabIndex = 2;
-            this.buttonHome.UseVisualStyleBackColor = false;
-            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            this.Fines.HeaderText = "Fines";
+            this.Fines.Name = "Fines";
+            this.Fines.ReadOnly = true;
             // 
             // Return
             // 
@@ -647,5 +655,6 @@
         private System.Windows.Forms.Panel panelBookID;
         private System.Windows.Forms.TextBox textBoxBookID;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fines;
     }
 }

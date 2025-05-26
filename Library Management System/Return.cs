@@ -12,6 +12,9 @@ namespace Library_Management_System
         private string connectionString = "Server=127.0.0.1;Database=sys;User ID=root;Password=0430;SslMode=None;";
         // Fix for CS1061: Ensure that listBoxBorrowedBooks is properly defined as a ListBox instead of an object.
 
+
+
+
         private ListBox listBoxBorrowedBooks; // Update the type from 'object' to 'ListBox'
 
         public Return()
@@ -30,6 +33,8 @@ namespace Library_Management_System
 
 
         }
+
+
 
 
         private void Return_Load(object sender, EventArgs e)
@@ -138,7 +143,7 @@ namespace Library_Management_System
             dataGridViewBorrower.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "BorrowerBookID",
-                HeaderText = "BorrowerBookID",
+                HeaderText = "BBID",
                 DataPropertyName = "BorrowerBookID",
                 ReadOnly = true,
                 Width = 80
@@ -189,6 +194,15 @@ namespace Library_Management_System
                 Width = 100
             });
 
+            dataGridViewBorrower.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Fines",
+                HeaderText = "Fines",
+                DataPropertyName = "Fines",
+                ReadOnly = true,
+                Width = 100
+            });
+
             dataGridViewBorrower.AutoGenerateColumns = false;
             dataGridViewBorrower.AllowUserToAddRows = false;
             dataGridViewBorrower.AllowUserToDeleteRows = false;
@@ -202,7 +216,7 @@ namespace Library_Management_System
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT BorrowerBookID, UserID, FullName, DateTimeBorrow, DueDateTimeReturn, Status FROM BorrowerTable WHERE Status = 'Borrowed'";
+                    string query = "SELECT BorrowerBookID, UserID, FullName, DateTimeBorrow, DueDateTimeReturn, Status, Fines FROM BorrowerTable WHERE Status = 'Borrowed'";
                     MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
@@ -214,9 +228,6 @@ namespace Library_Management_System
                 MessageBox.Show($"An error occurred while loading borrower data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        // Fix for CS0121: Remove the duplicate method definition for dataGridViewBorrower_CellClick.
-        // The duplicate method is removed, leaving only one definition.
 
 
 
@@ -242,16 +253,28 @@ namespace Library_Management_System
                     using (var conn = new MySqlConnection(connectionString))
                     {
                         conn.Open();
+                        // Get total fine for this BorrowerBookID
+                        decimal totalFine = 0;
+                        using (var fineCmd = new MySqlCommand("SELECT Fines FROM BorrowerTable WHERE BorrowerBookID = @BorrowerBookID", conn))
+                        {
+                            fineCmd.Parameters.AddWithValue("@BorrowerBookID", borrowerBookID);
+                            var fineObj = fineCmd.ExecuteScalar();
+                            if (fineObj != null && fineObj != DBNull.Value)
+                                totalFine = Convert.ToDecimal(fineObj);
+                        }
+
                         var booksCmd = new MySqlCommand("SELECT BookID, Title, Qty FROM BorrowedBooks WHERE BorrowerBookID = @BorrowerBookID", conn);
                         booksCmd.Parameters.AddWithValue("@BorrowerBookID", borrowerBookID);
                         using (var reader = booksCmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                string bookInfo = $"{reader["BookID"]}, {reader["Title"]}, {reader["Qty"]}";
+                                string bookInfo = $"ID:{reader["BookID"]}, {reader["Title"]}, {reader["Qty"]}, Fines: {totalFine:C}";
                                 listBoxBorrowBooks.Items.Add(bookInfo);
                             }
                         }
+
+
                     }
 
                     // --- Optionally, display user details and image as before ---
@@ -467,6 +490,54 @@ namespace Library_Management_System
                     return;
                 }
 
+                // --- FINE CALCULATION START ---
+                // Get DueDateTimeReturn from BorrowerTable
+                DateTime dueDate = DateTime.Now;
+                using (var cmd = new MySqlCommand("SELECT DueDateTimeReturn FROM BorrowerTable WHERE BorrowerBookID = @BorrowerBookID", conn))
+                {
+                    cmd.Parameters.AddWithValue("@BorrowerBookID", borrowerBookID);
+                    var dueObj = cmd.ExecuteScalar();
+                    if (dueObj != null && dueObj != DBNull.Value)
+                        dueDate = Convert.ToDateTime(dueObj);
+                }
+
+                // Calculate overdue 1-minute intervals
+                double overdueMinutes = (DateTime.Now - dueDate).TotalMinutes;
+                if (overdueMinutes < 0) overdueMinutes = 0;
+                int overdueIntervals = (int)Math.Floor(overdueMinutes / 1);
+
+                // Get BookPrice from Books table
+                decimal bookPrice = 0;
+                using (var cmd = new MySqlCommand("SELECT BookPrice FROM Books WHERE BookID = @BookID", conn))
+                {
+                    cmd.Parameters.AddWithValue("@BookID", bookId);
+                    var priceObj = cmd.ExecuteScalar();
+                    if (priceObj != null && priceObj != DBNull.Value)
+                        bookPrice = Convert.ToDecimal(priceObj);
+                }
+
+                // Calculate fine for every 1 minute overdue
+                decimal fine = 0;
+                if (overdueIntervals > 0)
+                {
+                    fine = bookPrice * 0.05m * overdueIntervals * qtyToReturn;
+                }
+
+                // Update Fines in BorrowerTable (add to existing fines if any)
+
+                if (fine > 0)
+                {
+                    using (var cmd = new MySqlCommand("UPDATE BorrowerTable SET Fines = IFNULL(Fines,0) + @Fine WHERE BorrowerBookID = @BorrowerBookID", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Fine", fine);
+                        cmd.Parameters.AddWithValue("@BorrowerBookID", borrowerBookID);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                // --- FINE CALCULATION END ---
+
+
                 // 6. Update BorrowedBooks Qty
                 using (var cmd = new MySqlCommand("UPDATE BorrowedBooks SET Qty = @NewQty WHERE BorrowerBookID = @BorrowerBookID AND BookID = @BookID", conn))
                 {
@@ -490,7 +561,6 @@ namespace Library_Management_System
                     cmd.Parameters.AddWithValue("@BookID", bookId);
                     cmd.ExecuteNonQuery();
                 }
-
 
                 // 7. If all books for this BorrowerBookID are returned, update status to Returned
                 bool allReturned = true;
@@ -531,6 +601,7 @@ namespace Library_Management_System
 
             // Optionally, clear or update listBoxBorrowBooks and other UI elements as needed
         }
+
 
         private void RemoveReturnedBorrowerFromGrid(long borrowerBookID)
         {

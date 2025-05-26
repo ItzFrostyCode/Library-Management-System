@@ -14,10 +14,11 @@ namespace Library_Management_System
             StyleDataGridViewTransactions();
             ConfigureDataGridViewTransactions();
             LoadDataGridViewTransactions();
+            StyleAllButtons();
         }
 
         // Method to add a transaction to the DataGridView
-        public void AddTransaction(long borrowerBookID, string userID, string fullName, string dateTimeBorrow, string dueDateTimeReturn, string status)
+        public void AddTransaction(long borrowerBookID, string userID, string fullName, string dateTimeBorrow, string dueDateTimeReturn, string status, decimal fines)
         {
             if (dataGridViewTransactions.DataSource is DataTable dataTable)
             {
@@ -28,9 +29,11 @@ namespace Library_Management_System
                 newRow["DateTimeBorrow"] = dateTimeBorrow;
                 newRow["DueDateTimeReturn"] = dueDateTimeReturn;
                 newRow["Status"] = status;
+                newRow["Fines"] = fines;
                 dataTable.Rows.Add(newRow);
             }
         }
+
 
         private void StyleDataGridViewTransactions()
         {
@@ -131,22 +134,31 @@ namespace Library_Management_System
                 Width = 100
             });
 
+            // Add Fines column
+            dataGridViewTransactions.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Fines",
+                HeaderText = "Fines",
+                DataPropertyName = "Fines",
+                ReadOnly = true,
+                Width = 80
+            });
+
             dataGridViewTransactions.AutoGenerateColumns = false;
             dataGridViewTransactions.AllowUserToAddRows = false;
             dataGridViewTransactions.AllowUserToDeleteRows = false;
             dataGridViewTransactions.ReadOnly = true;
         }
 
+
         private void LoadDataGridViewTransactions()
         {
             try
             {
-                // If you want to load from a database, use similar logic as in Borrow/Return.
-                // Example (adjust connectionString as needed):
                 using (MySqlConnector.MySqlConnection conn = new MySqlConnector.MySqlConnection("Server=127.0.0.1;Database=sys;User ID=root;Password=0430;SslMode=None;"))
                 {
                     conn.Open();
-                    string query = "SELECT BorrowerBookID, UserID, FullName, DateTimeBorrow, DueDateTimeReturn, Status FROM BorrowerTable";
+                    string query = "SELECT BorrowerBookID, UserID, FullName, DateTimeBorrow, DueDateTimeReturn, Status, Fines FROM BorrowerTable";
                     MySqlConnector.MySqlDataAdapter adapter = new MySqlConnector.MySqlDataAdapter(query, conn);
                     DataTable dataTable = new DataTable();
                     adapter.Fill(dataTable);
@@ -158,6 +170,7 @@ namespace Library_Management_System
                 MessageBox.Show($"An error occurred while loading transactions: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
@@ -202,8 +215,93 @@ namespace Library_Management_System
             this.Hide();
         }
 
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+            DrawRoundedRectangle(e.Graphics, panelMain.ClientRectangle, 12);
+        }
+
+        private void DrawRoundedRectangle(Graphics graphics, Rectangle bounds, int cornerRadius)
+        {
+            Color borderColor = Color.FromArgb(218, 218, 218);
+
+            int penWidth = 2;
+
+            // Adjust bounds to account for the pen's width
+            Rectangle adjustedBounds = new Rectangle(
+                bounds.X + penWidth / 2,
+                bounds.Y + penWidth / 2,
+                bounds.Width - penWidth,
+                bounds.Height - penWidth
+            );
+
+            using (GraphicsPath path = CreateRoundedRectanglePath(adjustedBounds, cornerRadius))
+            {
 
 
+                // Draw the border
+                using (Pen borderPen = new Pen(borderColor, penWidth))
+                {
+                    graphics.SmoothingMode = SmoothingMode.AntiAlias; // Ensure smooth edges
+                    graphics.DrawPath(borderPen, path);
+                }
+            }
+        }
 
+        private GraphicsPath CreateRoundedRectanglePath(Rectangle bounds, int cornerRadius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = cornerRadius * 2;
+
+            // Top-left corner
+            path.AddArc(bounds.X, bounds.Y, diameter, diameter, 180, 90);
+
+            // Top-right corner
+            path.AddArc(bounds.Right - diameter, bounds.Y, diameter, diameter, 270, 90);
+
+            // Bottom-right corner
+            path.AddArc(bounds.Right - diameter, bounds.Bottom - diameter, diameter, diameter, 0, 90);
+
+            // Bottom-left corner
+            path.AddArc(bounds.X, bounds.Bottom - diameter, diameter, diameter, 90, 90);
+
+            path.CloseFigure();
+            return path;
+        }
+
+
+        private void StyleButton(Button button)
+        {
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+
+            // Round corners
+            GraphicsPath path = new GraphicsPath();
+            int radius = 8;
+            Rectangle rect = new Rectangle(0, 0, button.Width, button.Height);
+            int diameter = radius * 2;
+
+            path.StartFigure();
+            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);
+            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);
+            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
+            path.CloseFigure();
+
+            button.Region = new Region(path);
+        }
+        private void StyleAllButtons()
+        {
+            StyleButton(buttonHome);
+            StyleButton(buttonUsers);
+            StyleButton(buttonBooks);
+            StyleButton(buttonBorrow);
+            StyleButton(buttonReturn);
+            StyleButton(buttonTransactionForm);
+
+
+            StyleButton(buttonSettings);
+            StyleButton(buttonLogout);
+
+        }
     }
 }
