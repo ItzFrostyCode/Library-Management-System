@@ -142,6 +142,9 @@
   <data name="BooksIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BooksIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PageTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PageTransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="import-icon-text" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\import-icon-text.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,6 +181,9 @@
   <data name="TransactionIconDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TransactionIconDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="UpdateButton-White" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UpdateButton-White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="DeleteButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DeleteButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,9 +207,6 @@
   </data>
   <data name="decrement" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\decrement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AddButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BooksIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BooksIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,16 +235,16 @@
   <data name="Search (24x24)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search (24x24).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UpdateButton-White" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UpdateButton-White.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AddButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PageHome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PageHome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PageTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PageTransaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="PageReturn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PageReturn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buttonTransactionActive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buttonTransactionActive.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

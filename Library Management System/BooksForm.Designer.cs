@@ -740,6 +740,7 @@
             this.buttonLogout.Size = new System.Drawing.Size(67, 50);
             this.buttonLogout.TabIndex = 4;
             this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonSettings
             // 

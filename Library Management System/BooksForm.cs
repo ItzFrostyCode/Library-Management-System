@@ -1093,6 +1093,13 @@ namespace Library_Management_System
             this.Hide();
         }
 
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            AdminLoginForm loginForm = new AdminLoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
+
         // -------- Navigation buttons end -------- \\
     }
 }

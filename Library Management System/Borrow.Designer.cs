@@ -46,6 +46,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelUserDetails = new System.Windows.Forms.Panel();
+            this.buttonDeleteBooksBorrow = new System.Windows.Forms.Button();
+            this.listBoxBorrowBooks = new System.Windows.Forms.ListBox();
+            this.buttonClearBooksBorrowList = new System.Windows.Forms.Button();
+            this.buttonBooksBorrowConfirmation = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.buttonAddBooksBorrow = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelQtyBorrow = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panelBookID = new System.Windows.Forms.Panel();
+            this.textBoxBookID = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.labelContactNumber = new System.Windows.Forms.Label();
             this.labelEmailAddress = new System.Windows.Forms.Label();
             this.labelFullName = new System.Windows.Forms.Label();
@@ -55,21 +67,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panelBookID = new System.Windows.Forms.Panel();
-            this.textBoxBookID = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.labelQtyBorrow = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.buttonAddBooksBorrow = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.buttonBooksBorrowConfirmation = new System.Windows.Forms.Button();
-            this.buttonClearBooksBorrowList = new System.Windows.Forms.Button();
-            this.listBoxBorrowBooks = new System.Windows.Forms.ListBox();
-            this.buttonDeleteBooksBorrow = new System.Windows.Forms.Button();
+            this.pictureBoxBooks = new System.Windows.Forms.PictureBox();
             this.buttonDecrementQty = new System.Windows.Forms.Button();
             this.buttonIncrementQty = new System.Windows.Forms.Button();
-            this.pictureBoxBooks = new System.Windows.Forms.PictureBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -172,7 +172,7 @@
             this.Quantity});
             this.dataGridViewBooks.Location = new System.Drawing.Point(11, 250);
             this.dataGridViewBooks.Name = "dataGridViewBooks";
-            this.dataGridViewBooks.Size = new System.Drawing.Size(733, 446);
+            this.dataGridViewBooks.Size = new System.Drawing.Size(733, 412);
             this.dataGridViewBooks.TabIndex = 59;
             // 
             // BookID
@@ -218,17 +218,17 @@
             this.panel1.Location = new System.Drawing.Point(753, 121);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 63);
+            this.panel1.Size = new System.Drawing.Size(500, 70);
             this.panel1.TabIndex = 60;
             // 
             // panelFullName
             // 
             this.panelFullName.Controls.Add(this.textBoxFullName);
             this.panelFullName.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelFullName.Location = new System.Drawing.Point(0, 24);
+            this.panelFullName.Location = new System.Drawing.Point(0, 26);
             this.panelFullName.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.panelFullName.Name = "panelFullName";
-            this.panelFullName.Size = new System.Drawing.Size(500, 39);
+            this.panelFullName.Size = new System.Drawing.Size(500, 44);
             this.panelFullName.TabIndex = 1;
             this.panelFullName.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFullName_Paint);
             // 
@@ -236,12 +236,12 @@
             // 
             this.textBoxFullName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.textBoxFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxFullName.Font = new System.Drawing.Font("Calibri", 12.75F);
+            this.textBoxFullName.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFullName.ForeColor = System.Drawing.Color.Gray;
             this.textBoxFullName.Location = new System.Drawing.Point(15, 9);
             this.textBoxFullName.Margin = new System.Windows.Forms.Padding(15, 9, 15, 3);
             this.textBoxFullName.Name = "textBoxFullName";
-            this.textBoxFullName.Size = new System.Drawing.Size(445, 21);
+            this.textBoxFullName.Size = new System.Drawing.Size(445, 24);
             this.textBoxFullName.TabIndex = 0;
             this.textBoxFullName.Text = "First Name / Middle Initial / Last Name";
             this.textBoxFullName.Enter += new System.EventHandler(this.textBoxFullName_Enter);
@@ -272,6 +272,17 @@
             // 
             // panelUserDetails
             // 
+            this.panelUserDetails.Controls.Add(this.buttonDeleteBooksBorrow);
+            this.panelUserDetails.Controls.Add(this.listBoxBorrowBooks);
+            this.panelUserDetails.Controls.Add(this.buttonClearBooksBorrowList);
+            this.panelUserDetails.Controls.Add(this.buttonBooksBorrowConfirmation);
+            this.panelUserDetails.Controls.Add(this.label10);
+            this.panelUserDetails.Controls.Add(this.buttonAddBooksBorrow);
+            this.panelUserDetails.Controls.Add(this.label9);
+            this.panelUserDetails.Controls.Add(this.labelQtyBorrow);
+            this.panelUserDetails.Controls.Add(this.buttonDecrementQty);
+            this.panelUserDetails.Controls.Add(this.buttonIncrementQty);
+            this.panelUserDetails.Controls.Add(this.panel7);
             this.panelUserDetails.Controls.Add(this.labelContactNumber);
             this.panelUserDetails.Controls.Add(this.labelEmailAddress);
             this.panelUserDetails.Controls.Add(this.labelFullName);
@@ -282,11 +293,155 @@
             this.panelUserDetails.Controls.Add(this.label5);
             this.panelUserDetails.Controls.Add(this.label4);
             this.panelUserDetails.Controls.Add(this.label3);
-            this.panelUserDetails.Location = new System.Drawing.Point(753, 192);
+            this.panelUserDetails.Location = new System.Drawing.Point(753, 209);
             this.panelUserDetails.Name = "panelUserDetails";
-            this.panelUserDetails.Size = new System.Drawing.Size(500, 145);
+            this.panelUserDetails.Size = new System.Drawing.Size(500, 453);
             this.panelUserDetails.TabIndex = 62;
             this.panelUserDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.panelUserDetails_Paint);
+            // 
+            // buttonDeleteBooksBorrow
+            // 
+            this.buttonDeleteBooksBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDeleteBooksBorrow.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDeleteBooksBorrow.Location = new System.Drawing.Point(388, 183);
+            this.buttonDeleteBooksBorrow.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
+            this.buttonDeleteBooksBorrow.Name = "buttonDeleteBooksBorrow";
+            this.buttonDeleteBooksBorrow.Size = new System.Drawing.Size(95, 35);
+            this.buttonDeleteBooksBorrow.TabIndex = 93;
+            this.buttonDeleteBooksBorrow.Text = "Delete";
+            this.buttonDeleteBooksBorrow.UseVisualStyleBackColor = true;
+            this.buttonDeleteBooksBorrow.Click += new System.EventHandler(this.buttonDeleteBooksBorrow_Click_1);
+            // 
+            // listBoxBorrowBooks
+            // 
+            this.listBoxBorrowBooks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxBorrowBooks.FormattingEnabled = true;
+            this.listBoxBorrowBooks.ItemHeight = 21;
+            this.listBoxBorrowBooks.Location = new System.Drawing.Point(15, 243);
+            this.listBoxBorrowBooks.Name = "listBoxBorrowBooks";
+            this.listBoxBorrowBooks.Size = new System.Drawing.Size(468, 151);
+            this.listBoxBorrowBooks.TabIndex = 92;
+            // 
+            // buttonClearBooksBorrowList
+            // 
+            this.buttonClearBooksBorrowList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonClearBooksBorrowList.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClearBooksBorrowList.Location = new System.Drawing.Point(287, 407);
+            this.buttonClearBooksBorrowList.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
+            this.buttonClearBooksBorrowList.Name = "buttonClearBooksBorrowList";
+            this.buttonClearBooksBorrowList.Size = new System.Drawing.Size(95, 35);
+            this.buttonClearBooksBorrowList.TabIndex = 91;
+            this.buttonClearBooksBorrowList.Text = "Clear";
+            this.buttonClearBooksBorrowList.UseVisualStyleBackColor = true;
+            // 
+            // buttonBooksBorrowConfirmation
+            // 
+            this.buttonBooksBorrowConfirmation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.buttonBooksBorrowConfirmation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBooksBorrowConfirmation.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBooksBorrowConfirmation.ForeColor = System.Drawing.Color.White;
+            this.buttonBooksBorrowConfirmation.Location = new System.Drawing.Point(387, 407);
+            this.buttonBooksBorrowConfirmation.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
+            this.buttonBooksBorrowConfirmation.Name = "buttonBooksBorrowConfirmation";
+            this.buttonBooksBorrowConfirmation.Size = new System.Drawing.Size(95, 35);
+            this.buttonBooksBorrowConfirmation.TabIndex = 90;
+            this.buttonBooksBorrowConfirmation.Text = "Borrow";
+            this.buttonBooksBorrowConfirmation.UseVisualStyleBackColor = false;
+            this.buttonBooksBorrowConfirmation.Click += new System.EventHandler(this.buttonBooksBorrowConfirmation_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(10, 215);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(182, 25);
+            this.label10.TabIndex = 89;
+            this.label10.Text = "Borrowed Books List";
+            // 
+            // buttonAddBooksBorrow
+            // 
+            this.buttonAddBooksBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddBooksBorrow.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAddBooksBorrow.Location = new System.Drawing.Point(388, 139);
+            this.buttonAddBooksBorrow.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
+            this.buttonAddBooksBorrow.Name = "buttonAddBooksBorrow";
+            this.buttonAddBooksBorrow.Size = new System.Drawing.Size(95, 35);
+            this.buttonAddBooksBorrow.TabIndex = 88;
+            this.buttonAddBooksBorrow.Text = "Add";
+            this.buttonAddBooksBorrow.UseVisualStyleBackColor = true;
+            this.buttonAddBooksBorrow.Click += new System.EventHandler(this.buttonAddBooksBorrow_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkRed;
+            this.label9.Location = new System.Drawing.Point(228, 150);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 17);
+            this.label9.TabIndex = 87;
+            this.label9.Text = "Only 3 QTY for 1 Book";
+            // 
+            // labelQtyBorrow
+            // 
+            this.labelQtyBorrow.AutoSize = true;
+            this.labelQtyBorrow.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQtyBorrow.Location = new System.Drawing.Point(284, 178);
+            this.labelQtyBorrow.Name = "labelQtyBorrow";
+            this.labelQtyBorrow.Size = new System.Drawing.Size(32, 37);
+            this.labelQtyBorrow.TabIndex = 86;
+            this.labelQtyBorrow.Text = "1";
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.panelBookID);
+            this.panel7.Controls.Add(this.label8);
+            this.panel7.Location = new System.Drawing.Point(15, 146);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(196, 63);
+            this.panel7.TabIndex = 83;
+            // 
+            // panelBookID
+            // 
+            this.panelBookID.Controls.Add(this.textBoxBookID);
+            this.panelBookID.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBookID.Location = new System.Drawing.Point(0, 24);
+            this.panelBookID.Name = "panelBookID";
+            this.panelBookID.Size = new System.Drawing.Size(196, 39);
+            this.panelBookID.TabIndex = 1;
+            this.panelBookID.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBookID_Paint);
+            // 
+            // textBoxBookID
+            // 
+            this.textBoxBookID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
+            this.textBoxBookID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBookID.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBookID.ForeColor = System.Drawing.Color.Gray;
+            this.textBoxBookID.Location = new System.Drawing.Point(15, 9);
+            this.textBoxBookID.Margin = new System.Windows.Forms.Padding(15, 9, 15, 3);
+            this.textBoxBookID.Name = "textBoxBookID";
+            this.textBoxBookID.Size = new System.Drawing.Size(166, 21);
+            this.textBoxBookID.TabIndex = 0;
+            this.textBoxBookID.Text = "Enter Book ID";
+            this.textBoxBookID.Enter += new System.EventHandler(this.textBoxBookID_Enter_1);
+            this.textBoxBookID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBookID_KeyPress);
+            this.textBoxBookID.Leave += new System.EventHandler(this.textBoxBookID_Leave_1);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 21);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "BookID*";
             // 
             // labelContactNumber
             // 
@@ -374,175 +529,6 @@
             this.label3.TabIndex = 63;
             this.label3.Text = "User Details";
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.Transparent;
-            this.panel7.Controls.Add(this.panelBookID);
-            this.panel7.Controls.Add(this.label8);
-            this.panel7.Location = new System.Drawing.Point(753, 345);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(218, 63);
-            this.panel7.TabIndex = 70;
-            // 
-            // panelBookID
-            // 
-            this.panelBookID.Controls.Add(this.textBoxBookID);
-            this.panelBookID.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBookID.Location = new System.Drawing.Point(0, 24);
-            this.panelBookID.Name = "panelBookID";
-            this.panelBookID.Size = new System.Drawing.Size(218, 39);
-            this.panelBookID.TabIndex = 1;
-            this.panelBookID.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBookID_Paint);
-            // 
-            // textBoxBookID
-            // 
-            this.textBoxBookID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
-            this.textBoxBookID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxBookID.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBookID.ForeColor = System.Drawing.Color.Gray;
-            this.textBoxBookID.Location = new System.Drawing.Point(15, 9);
-            this.textBoxBookID.Margin = new System.Windows.Forms.Padding(15, 9, 15, 3);
-            this.textBoxBookID.Name = "textBoxBookID";
-            this.textBoxBookID.Size = new System.Drawing.Size(188, 21);
-            this.textBoxBookID.TabIndex = 0;
-            this.textBoxBookID.Text = "Enter Book ID";
-            this.textBoxBookID.Enter += new System.EventHandler(this.textBoxBookID_Enter);
-            this.textBoxBookID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxBookID_KeyPress);
-            this.textBoxBookID.Leave += new System.EventHandler(this.textBoxBookID_Leave);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Margin = new System.Windows.Forms.Padding(0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 21);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "BookID*";
-            // 
-            // labelQtyBorrow
-            // 
-            this.labelQtyBorrow.AutoSize = true;
-            this.labelQtyBorrow.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQtyBorrow.Location = new System.Drawing.Point(1035, 375);
-            this.labelQtyBorrow.Name = "labelQtyBorrow";
-            this.labelQtyBorrow.Size = new System.Drawing.Size(32, 37);
-            this.labelQtyBorrow.TabIndex = 73;
-            this.labelQtyBorrow.Text = "1";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkRed;
-            this.label9.Location = new System.Drawing.Point(979, 347);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 17);
-            this.label9.TabIndex = 74;
-            this.label9.Text = "Only 3 QTY for 1 Book";
-            // 
-            // buttonAddBooksBorrow
-            // 
-            this.buttonAddBooksBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddBooksBorrow.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddBooksBorrow.Location = new System.Drawing.Point(1158, 350);
-            this.buttonAddBooksBorrow.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
-            this.buttonAddBooksBorrow.Name = "buttonAddBooksBorrow";
-            this.buttonAddBooksBorrow.Size = new System.Drawing.Size(95, 35);
-            this.buttonAddBooksBorrow.TabIndex = 75;
-            this.buttonAddBooksBorrow.Text = "Add";
-            this.buttonAddBooksBorrow.UseVisualStyleBackColor = true;
-            this.buttonAddBooksBorrow.Click += new System.EventHandler(this.buttonAddBooksBorrow_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(752, 443);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(182, 25);
-            this.label10.TabIndex = 76;
-            this.label10.Text = "Borrowed Books List";
-            // 
-            // buttonBooksBorrowConfirmation
-            // 
-            this.buttonBooksBorrowConfirmation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.buttonBooksBorrowConfirmation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBooksBorrowConfirmation.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBooksBorrowConfirmation.ForeColor = System.Drawing.Color.White;
-            this.buttonBooksBorrowConfirmation.Location = new System.Drawing.Point(1158, 661);
-            this.buttonBooksBorrowConfirmation.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
-            this.buttonBooksBorrowConfirmation.Name = "buttonBooksBorrowConfirmation";
-            this.buttonBooksBorrowConfirmation.Size = new System.Drawing.Size(95, 35);
-            this.buttonBooksBorrowConfirmation.TabIndex = 77;
-            this.buttonBooksBorrowConfirmation.Text = "Borrow";
-            this.buttonBooksBorrowConfirmation.UseVisualStyleBackColor = false;
-            this.buttonBooksBorrowConfirmation.Click += new System.EventHandler(this.buttonBooksBorrowConfirmation_Click);
-            // 
-            // buttonClearBooksBorrowList
-            // 
-            this.buttonClearBooksBorrowList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonClearBooksBorrowList.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClearBooksBorrowList.Location = new System.Drawing.Point(1058, 661);
-            this.buttonClearBooksBorrowList.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
-            this.buttonClearBooksBorrowList.Name = "buttonClearBooksBorrowList";
-            this.buttonClearBooksBorrowList.Size = new System.Drawing.Size(95, 35);
-            this.buttonClearBooksBorrowList.TabIndex = 78;
-            this.buttonClearBooksBorrowList.Text = "Clear";
-            this.buttonClearBooksBorrowList.UseVisualStyleBackColor = true;
-            this.buttonClearBooksBorrowList.Click += new System.EventHandler(this.buttonClearBooksBorrowList_Click);
-            // 
-            // listBoxBorrowBooks
-            // 
-            this.listBoxBorrowBooks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBoxBorrowBooks.FormattingEnabled = true;
-            this.listBoxBorrowBooks.ItemHeight = 21;
-            this.listBoxBorrowBooks.Location = new System.Drawing.Point(753, 471);
-            this.listBoxBorrowBooks.Name = "listBoxBorrowBooks";
-            this.listBoxBorrowBooks.Size = new System.Drawing.Size(500, 172);
-            this.listBoxBorrowBooks.TabIndex = 81;
-            // 
-            // buttonDeleteBooksBorrow
-            // 
-            this.buttonDeleteBooksBorrow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteBooksBorrow.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteBooksBorrow.Location = new System.Drawing.Point(1158, 398);
-            this.buttonDeleteBooksBorrow.Margin = new System.Windows.Forms.Padding(3, 10, 0, 3);
-            this.buttonDeleteBooksBorrow.Name = "buttonDeleteBooksBorrow";
-            this.buttonDeleteBooksBorrow.Size = new System.Drawing.Size(95, 35);
-            this.buttonDeleteBooksBorrow.TabIndex = 82;
-            this.buttonDeleteBooksBorrow.Text = "Delete";
-            this.buttonDeleteBooksBorrow.UseVisualStyleBackColor = true;
-            this.buttonDeleteBooksBorrow.Click += new System.EventHandler(this.buttonDeleteBooksBorrow_Click);
-            // 
-            // buttonDecrementQty
-            // 
-            this.buttonDecrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.decrement;
-            this.buttonDecrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonDecrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDecrementQty.Location = new System.Drawing.Point(1076, 378);
-            this.buttonDecrementQty.Name = "buttonDecrementQty";
-            this.buttonDecrementQty.Size = new System.Drawing.Size(29, 30);
-            this.buttonDecrementQty.TabIndex = 72;
-            this.buttonDecrementQty.UseVisualStyleBackColor = true;
-            this.buttonDecrementQty.Click += new System.EventHandler(this.buttonDecrementQty_Click);
-            // 
-            // buttonIncrementQty
-            // 
-            this.buttonIncrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.increment;
-            this.buttonIncrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonIncrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIncrementQty.Location = new System.Drawing.Point(997, 378);
-            this.buttonIncrementQty.Name = "buttonIncrementQty";
-            this.buttonIncrementQty.Size = new System.Drawing.Size(29, 30);
-            this.buttonIncrementQty.TabIndex = 71;
-            this.buttonIncrementQty.UseVisualStyleBackColor = true;
-            this.buttonIncrementQty.Click += new System.EventHandler(this.buttonIncrementQty_Click);
-            // 
             // pictureBoxBooks
             // 
             this.pictureBoxBooks.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -552,6 +538,30 @@
             this.pictureBoxBooks.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBoxBooks.TabIndex = 68;
             this.pictureBoxBooks.TabStop = false;
+            // 
+            // buttonDecrementQty
+            // 
+            this.buttonDecrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.decrement;
+            this.buttonDecrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonDecrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDecrementQty.Location = new System.Drawing.Point(249, 183);
+            this.buttonDecrementQty.Name = "buttonDecrementQty";
+            this.buttonDecrementQty.Size = new System.Drawing.Size(29, 30);
+            this.buttonDecrementQty.TabIndex = 85;
+            this.buttonDecrementQty.UseVisualStyleBackColor = true;
+            this.buttonDecrementQty.Click += new System.EventHandler(this.buttonDecrementQty_Click);
+            // 
+            // buttonIncrementQty
+            // 
+            this.buttonIncrementQty.BackgroundImage = global::Library_Management_System.Properties.Resources.increment;
+            this.buttonIncrementQty.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonIncrementQty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIncrementQty.Location = new System.Drawing.Point(322, 183);
+            this.buttonIncrementQty.Name = "buttonIncrementQty";
+            this.buttonIncrementQty.Size = new System.Drawing.Size(29, 30);
+            this.buttonIncrementQty.TabIndex = 84;
+            this.buttonIncrementQty.UseVisualStyleBackColor = true;
+            this.buttonIncrementQty.Click += new System.EventHandler(this.buttonIncrementQty_Click);
             // 
             // pictureBoxUser
             // 
@@ -608,6 +618,7 @@
             this.buttonLogout.Size = new System.Drawing.Size(67, 50);
             this.buttonLogout.TabIndex = 4;
             this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonSettings
             // 
@@ -697,17 +708,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(246)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(1264, 729);
-            this.Controls.Add(this.buttonDeleteBooksBorrow);
-            this.Controls.Add(this.listBoxBorrowBooks);
-            this.Controls.Add(this.buttonClearBooksBorrowList);
-            this.Controls.Add(this.buttonBooksBorrowConfirmation);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.buttonAddBooksBorrow);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.labelQtyBorrow);
-            this.Controls.Add(this.buttonDecrementQty);
-            this.Controls.Add(this.buttonIncrementQty);
-            this.Controls.Add(this.panel7);
             this.Controls.Add(this.pictureBoxBooks);
             this.Controls.Add(this.panelUserDetails);
             this.Controls.Add(this.label1);
@@ -782,21 +782,21 @@
         private System.Windows.Forms.Label labelEmailAddress;
         private System.Windows.Forms.Label labelFullName;
         private System.Windows.Forms.Label labelContactNumber;
+        private System.Windows.Forms.PictureBox pictureBoxUser;
+        private System.Windows.Forms.Button buttonTransactionForm;
+        private System.Windows.Forms.Button buttonDeleteBooksBorrow;
+        private System.Windows.Forms.ListBox listBoxBorrowBooks;
+        private System.Windows.Forms.Button buttonClearBooksBorrowList;
+        private System.Windows.Forms.Button buttonBooksBorrowConfirmation;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button buttonAddBooksBorrow;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelQtyBorrow;
+        private System.Windows.Forms.Button buttonDecrementQty;
+        private System.Windows.Forms.Button buttonIncrementQty;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panelBookID;
         private System.Windows.Forms.TextBox textBoxBookID;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button buttonIncrementQty;
-        private System.Windows.Forms.Button buttonDecrementQty;
-        private System.Windows.Forms.Label labelQtyBorrow;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button buttonAddBooksBorrow;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button buttonBooksBorrowConfirmation;
-        private System.Windows.Forms.Button buttonClearBooksBorrowList;
-        private System.Windows.Forms.PictureBox pictureBoxUser;
-        private System.Windows.Forms.ListBox listBoxBorrowBooks;
-        private System.Windows.Forms.Button buttonDeleteBooksBorrow;
-        private System.Windows.Forms.Button buttonTransactionForm;
     }
 }

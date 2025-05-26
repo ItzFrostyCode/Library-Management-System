@@ -46,6 +46,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonTransactionForm = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelGroup2 = new System.Windows.Forms.Panel();
@@ -57,7 +58,6 @@
             this.buttonBooks = new System.Windows.Forms.Button();
             this.buttonUsers = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
-            this.buttonTransactionForm = new System.Windows.Forms.Button();
             this.panelUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelBooks.SuspendLayout();
@@ -252,6 +252,17 @@
             this.panelMain.TabIndex = 2;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
             // 
+            // buttonTransactionForm
+            // 
+            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
+            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
+            this.buttonTransactionForm.Name = "buttonTransactionForm";
+            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
+            this.buttonTransactionForm.TabIndex = 12;
+            this.buttonTransactionForm.UseVisualStyleBackColor = true;
+            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(218)))), ((int)(((byte)(218)))));
@@ -292,6 +303,7 @@
             this.buttonLogout.Size = new System.Drawing.Size(67, 50);
             this.buttonLogout.TabIndex = 4;
             this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonSettings
             // 
@@ -387,18 +399,6 @@
             this.buttonHome.Size = new System.Drawing.Size(67, 50);
             this.buttonHome.TabIndex = 2;
             this.buttonHome.UseVisualStyleBackColor = false;
-            // 
-            // buttonTransactionForm
-            // 
-            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
-            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
-            this.buttonTransactionForm.Name = "buttonTransactionForm";
-            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
-            this.buttonTransactionForm.TabIndex = 12;
-            this.buttonTransactionForm.UseVisualStyleBackColor = true;
-            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
-            
             // 
             // DashboardsForm
             // 

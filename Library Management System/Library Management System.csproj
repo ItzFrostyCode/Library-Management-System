@@ -176,6 +176,9 @@
     <EmbeddedResource Include="Return.resx">
       <DependentUpon>Return.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TransactionForm.resx">
+      <DependentUpon>TransactionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\PageReturn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonTransactionActive.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

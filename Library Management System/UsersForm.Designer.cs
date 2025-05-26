@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonTransactionForm = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelGroup2 = new System.Windows.Forms.Panel();
@@ -83,7 +84,6 @@
             this.buttonAddUser = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
-            this.buttonTransactionForm = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
             this.panelGroup2.SuspendLayout();
             this.panelGroup1.SuspendLayout();
@@ -118,6 +118,17 @@
             this.panelMain.Size = new System.Drawing.Size(1242, 68);
             this.panelMain.TabIndex = 1;
             this.panelMain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMain_Paint);
+            // 
+            // buttonTransactionForm
+            // 
+            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
+            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
+            this.buttonTransactionForm.Name = "buttonTransactionForm";
+            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
+            this.buttonTransactionForm.TabIndex = 39;
+            this.buttonTransactionForm.UseVisualStyleBackColor = true;
+            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
             // 
             // panel3
             // 
@@ -159,6 +170,7 @@
             this.buttonLogout.Size = new System.Drawing.Size(67, 50);
             this.buttonLogout.TabIndex = 4;
             this.buttonLogout.UseVisualStyleBackColor = false;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
             // buttonSettings
             // 
@@ -766,17 +778,6 @@
             this.pictureBoxUser.TabIndex = 38;
             this.pictureBoxUser.TabStop = false;
             // 
-            // buttonTransactionForm
-            // 
-            this.buttonTransactionForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTransactionForm.Image = global::Library_Management_System.Properties.Resources.TransactionIconDefault;
-            this.buttonTransactionForm.Location = new System.Drawing.Point(457, 11);
-            this.buttonTransactionForm.Name = "buttonTransactionForm";
-            this.buttonTransactionForm.Size = new System.Drawing.Size(67, 50);
-            this.buttonTransactionForm.TabIndex = 39;
-            this.buttonTransactionForm.UseVisualStyleBackColor = true;
-            this.buttonTransactionForm.Click += new System.EventHandler(this.buttonTransactionForm_Click);
-            // 
             // UsersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -896,5 +897,6 @@
         private System.Windows.Forms.DataGridViewImageColumn UserIMG;
         private System.Windows.Forms.PictureBox pictureBoxUser;
         private System.Windows.Forms.Button buttonTransactionForm;
+
     }
 }
